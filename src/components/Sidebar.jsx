@@ -1,79 +1,43 @@
-import { NavLink } from "react-router-dom";
-import {
-  LayoutDashboard,
-  FileText,
-  CheckSquare,
-  Timer,
-  Brain,
-} from "lucide-react";
-
 export default function Sidebar() {
-  const links = [
-    {
-      name: "Dashboard",
-      path: "/",
-      icon: LayoutDashboard,
-    },
-    {
-      name: "Notes",
-      path: "/notes",
-      icon: FileText,
-    },
-    {
-      name: "Tasks",
-      path: "/tasks",
-      icon: CheckSquare,
-    },
-    {
-      name: "Timer",
-      path: "/timer",
-      icon: Timer,
-    },
-  ];
-
   return (
-    <aside className="w-64 min-h-screen bg-gray-900 border-r border-gray-800 p-6">
-      
-      <div className="flex items-center gap-3 mb-12">
-        <Brain className="text-purple-400" size={32} />
+    <nav className="flex items-center justify-between px-8 py-4 bg-[#111827]">
 
-        <div>
-          <h1 className="text-2xl font-bold text-white">
-            StudyFlow
-          </h1>
+      <h1 className="text-2xl font-bold text-purple-400">
+        StudyFlow AI
+      </h1>
 
-          <p className="text-sm text-gray-400">
-            AI Workspace
-          </p>
-        </div>
+      <div className="flex items-center gap-6 text-gray-300">
+
+        <a
+          href="/"
+          className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-purple-500/20 hover:text-white transition"
+        >
+          📊 Dashboard
+        </a>
+
+        <a
+          href="/notes"
+          className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-purple-500/20 hover:text-white transition"
+        >
+          📝 Notes
+        </a>
+
+        <a
+          href="/tasks"
+          className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-purple-500/20 hover:text-white transition"
+        >
+          ✅ Tasks
+        </a>
+
+        <a
+          href="/timer"
+          className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-purple-500/20 hover:text-white transition"
+        >
+          ⏱ Timer
+        </a>
+
       </div>
 
-      <nav className="flex flex-col gap-3">
-        {links.map((link) => {
-          const Icon = link.icon;
-
-          return (
-            <NavLink
-              key={link.name}
-              to={link.path}
-              className={({ isActive }) =>
-                `flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200
-                ${
-                  isActive
-                    ? "bg-purple-500/20 text-purple-400"
-                    : "text-gray-300 hover:bg-gray-800 hover:text-white"
-                }`
-              }
-            >
-              <Icon size={20} />
-
-              <span className="font-medium">
-                {link.name}
-              </span>
-            </NavLink>
-          );
-        })}
-      </nav>
-    </aside>
+    </nav>
   );
 }

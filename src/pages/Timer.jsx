@@ -52,7 +52,7 @@ export default function Timer() {
       
       <div className="bg-[#131c31] border border-[#1f2a44] rounded-3xl p-10 w-full max-w-md shadow-2xl text-center">
         
-        <h1 className="text-4xl font-bold mb-8">
+        <h1 className="text-4xl font-bold mb-8 ">
           Pomodoro Timer
         </h1>
 
